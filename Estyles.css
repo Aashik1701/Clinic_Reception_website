@@ -1,0 +1,349 @@
+
+    
+      .container {
+        max-width: 120px;
+        margin: auto;
+        padding: 20px;
+      }
+      
+    
+    
+      .sidepanel {
+        height: 250px; 
+        width: 0; 
+        position: fixed; 
+        z-index: 1; 
+        top: 0;
+        left: 0;
+        background-color: #111; 
+        overflow-x: hidden; 
+        padding-top: 60px; 
+        transition: 0.5s;
+      }
+      
+      /* The sidepanel links */
+      .sidepanel a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      /* When you mouse over the navigation links, change their color */
+      .sidepanel a:hover {
+        color: #f1f1f1;
+      }
+      
+      /* Position and style the close button (top right corner) */
+      .sidepanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 5px;
+      }
+      
+      /* Style the button that is used to open the sidepanel */
+      .settings {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 10px;
+        border: none;
+        width: 120px;
+        position: fixed;
+        left: 1%;
+        top: 5%; /* Adjust the vertical position as needed */
+        transform: translateY(-50%); /* Center the object vertically */
+      }
+      
+      .settings:hover {
+        background-color: #444;
+      }
+      
+    
+    
+    
+      
+      header h1 {
+        margin: 0px;
+        background-color: #87C4FF;
+        font-size: 24px;
+        border-radius: 60px;
+    
+      }
+    
+      
+      nav {
+        margin-top: 20px;
+        
+    
+      }
+      
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      nav ul li {
+        display: inline;
+        margin-right: 10px;
+      }
+      
+      nav ul li a {
+        color: #000000;
+        background-color: #ffffff;
+        border-radius: 40px;
+        text-decoration: none;
+        padding: 10px;
+      }
+      
+      nav ul li a:hover {
+        background-color: #00a6ff;
+        color: #ffffff;
+        top: color;
+        border-radius: 50px;
+        
+      }
+      
+    
+      
+      form {
+        margin-top: 200px;
+      }
+      
+      form label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      form input[type="text"],
+      form input[type="email"],
+      form input[type="password"],
+      form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      form input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      
+    
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      
+      table th,
+      table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+      }
+      
+    
+      
+      .btn {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .btn:hover {
+        background-color: #ada8a8;
+      }
+    
+      
+      footer {
+        background-color: #333;
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+    
+      }
+    
+    /* nononononon */
+    
+      /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Set font and background color */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #E0F4FF;
+    }
+    
+    /* Center align header and footer contents */
+    header, footer {
+      text-align: center;
+      padding: 10px;
+    }
+    
+    /* Style navigation */
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      margin: 10px;
+    }
+    
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+      color: #666;
+    }
+    
+    /* Style main sections */
+    main {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    
+    section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      margin-bottom: 10px;
+    }
+    
+    /* Style tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    
+    /* Style buttons */
+    button {
+      cursor: pointer;
+      padding: 5px 10px;
+      background-color: #687EFF;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+    }
+    
+    button:hover {
+      background-color: #666;
+    }
+    
+    .logout {
+    
+      color:aliceblue;
+      
+      width: 100px;
+      height: 40px;
+      background-color: red;
+      position: fixed;
+      right: 1%;
+      top: 4%; /* Adjust the vertical position as needed */
+      transform: translateY(-50%); /* Center the object vertically */
+      line-height: normal;
+      border-radius: 40px;
+    
+    }
+    
+    /* Foooooooooooooooootttteeeeeeeeeerrrrrrrrr */
+    .footer {
+        background-color: #000000;
+        padding: 15px;
+        text-align: center;
+      }
+      
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      
+      
+    /* SCROLLMENU SCROLLMENU */
+    div.scrollmenu {
+      background-color: #333;
+      overflow: auto;
+      white-space: nowrap;
+    }
+    
+    div.scrollmenu a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+    }
+    
+    div.scrollmenu a:hover {
+      background-color: #777;
+    }
+    
+    
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+    }
+    
+    .title {
+      color: rgb(151, 45, 45);
+      font-size: 18px;
+    }
+    
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #0084ff;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+    
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+    
+    button:hover, a:hover {
+      opacity: 0.7;
+    }

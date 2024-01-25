@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV Data</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #search-button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="text" id="medicine-input" placeholder="Enter Drug Name">
+    <button id="search-button">Search</button>
+  </div>
+  <table id="medicine-table">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Drug Name</th>
+        <th>Reason</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>A CN Gel(Topical) 20gmA CN Soap 75gm</td>
+        <td>Acne</td>
+        <td>Mild to moderate acne (spots)</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>A Ret 0.05% Gel 20gmA Ret 0.1% Gel 20gmA Ret 0.025% Gel 20gm</td>
+        <td>Acne</td>
+        <td>A RET 0.025% is a prescription medicine that is used to reduce fine wrinkles</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ACGEL CL NANO Gel 15gm</td>
+        <td>Acne</td>
+        <td>It is used to treat acne vulgaris in people 12 years of age and older. Acne vulgaris is a condition in which
+          the skin has blackheads, white heads and pimple</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>ACGEL NANO Gel 15gm</td>
+        <td>Acne</td>
+        <td>It is used to treat acne vulgaris in people 12 years of age and older. Acne vulgaris is a condition in which
+          the skin has blackheads, white heads and pimple</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Acleen 1% Lotion 25ml</td>
+        <td>Acne</td>
+        <td>treat the most severe form of acne (nodular acne)Â </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Aclene 0.10% Gel 15gm</td>
+        <td>Acne</td>
+        <td>treat the most severe form of acne (nodular acne)Â </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Acnay Gel 10gm</td>
+        <td>Acne</td>
+        <td>treat the most severe form of acne (nodular acne)Â </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Acne Aid Bar 50gmAcne Aid Bar 100gm</td>
+        <td>Acne</td>
+        <td>Â treat acne vulgarisÂ </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Acne UV Gel 60gm</td>
+        <td>Acne</td>
+        <td>Â treat acne vulgarisÂ </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Acne UV SPF 30 Gel 30gm</td>
+        <td>Acne</td>
+        <td>Â treat mild to moderate acne(spots)</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Acnecure Gel 20gm</td>
+        <td>Acne</td>
+        <td>treatment of dry scaly skin disorders of the scalp</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Acnedap Gel 15gm</td>
+        <td>Acne</td>
+        <td>Mild to moderate acne (spots)</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Acnedap Plus Gel 15gm</td>
+        <td>Acne</td>
+        <td>A RET 0.025% is a prescription medicine that is used to reduce fine wrinkles</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Paracetamol 125mg Syrup 60mlParacetamol 500mg Tablet 10'S</td>
+        <td>Pain</td>
+        <td>muscles (myalgia) and joints (arthralgia), neuralgia, radiculitis, rheumatic diseases</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>PARACETAMOL(ABBOTT) 650mg Tablet 10's</td>
+        <td>Pain</td>
+        <td>used to relieve abdominal pain, spasmodic dysmenorrhea, symptomatic relief of intestinal, biliary and
+          uretericÂ colics</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Paracip 100mg Tablet 10'SParacip 150mg Injection 30ml</td>
+        <td>Pain</td>
+        <td>Â used to treat Sprain, Backache, Muscular pain, Soft tissue injuries and Musculoskeletal disorders</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Paracod 500/15mg Tablet 10'SParacod 650/30mg Tablet 6'S</td>
+        <td>Pain</td>
+        <td>Â fever, operative pain, dental pain, musculoskeletal and joint disorders</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    document.getElementById('search-button').addEventListener('click', function () {
+      var searchTerm = document.getElementById('medicine-input').value.trim().toLowerCase();
+      var table = document.getElementById('medicine-table');
+      var allRows = table.getElementsByTagName('tr');
+      for (var i = 0; i < allRows.length; i++) {
+        var cells = allRows[i].getElementsByTagName('td');
+        var found = false;
+        for (var j = 1; j < cells.length; j++) { // Start from 1 to skip Index column
+          if (cells[j].textContent.trim().toLowerCase().includes(searchTerm)) {
+            found = true;
+            break;
+          }
+        }
+        if (found) {
+          table.style.display = 'table';
+          allRows[i].style.display = '';
+        } else {
+          allRows[i].style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+
+
+</html>

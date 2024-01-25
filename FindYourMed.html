@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIND MEDS</title>
+  <style>
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        
+      }
+      
+      .centered-content {
+        padding: 15px;
+      }
+      #search-button {
+        padding: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+      
+      #search-button:hover {
+        background-color: #45a049;
+      }
+      
+      #search-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #4CAF50;
+      }
+      
+      
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #search-button {
+        padding: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="mas">
+        <div class="container h-100 align-items-center">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mx-auto">
+                <br>
+                <br>
+                <br>
+                <h1 class="">Find Your Meds!</h1> 
+                <h2 class="">Enter the name of a medicine/disease </h2>
+              </div>
+            </div>
+    
+          </div>
+        </div>    
+      </header>
+
+    <div class="container">
+        <div class="centered-content">
+          <input type="text" id="medicine-input" placeholder="Enter Drug Name">
+          <button id="search-button">Search</button>
+        </div>
+    </div>
+  <table id="medicine-table">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Drug Name</th>
+        <th>Reason</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>A CN Gel(Topical) 20gmA CN Soap 75gm</td>
+        <td>Acne</td>
+        <td>Mild to moderate acne (spots)</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>A Ret 0.05% Gel 20gmA Ret 0.1% Gel 20gmA Ret 0.025% Gel 20gm</td>
+        <td>Acne</td>
+        <td>A RET 0.025% is a prescription medicine that is used to reduce fine wrinkles</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ACGEL CL NANO Gel 15gm</td>
+        <td>Acne</td>
+        <td>It is used to treat acne vulgaris in people 12 years of age and older. Acne vulgaris is a condition in which
+          the skin has blackheads, white heads and pimple</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>ACGEL NANO Gel 15gm</td>
+        <td>Acne</td>
+        <td>It is used to treat acne vulgaris in people 12 years of age and older. Acne vulgaris is a condition in which
+          the skin has blackheads, white heads and pimple</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Acleen 1% Lotion 25ml</td>
+        <td>Acne</td>
+        <td>treat the most severe form of acne (nodular acne)Â </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Aclene 0.10% Gel 15gm</td>
+        <td>Acne</td>
+        <td>treat the most severe form of acne (nodular acne)Â </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Acnay Gel 10gm</td>
+        <td>Acne</td>
+        <td>treat the most severe form of acne (nodular acne)Â </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Acne Aid Bar 50gmAcne Aid Bar 100gm</td>
+        <td>Acne</td>
+        <td>Â treat acne vulgarisÂ </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Acne UV Gel 60gm</td>
+        <td>Acne</td>
+        <td>Â treat acne vulgarisÂ </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Acne UV SPF 30 Gel 30gm</td>
+        <td>Acne</td>
+        <td>Â treat mild to moderate acne(spots)</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Acnecure Gel 20gm</td>
+        <td>Acne</td>
+        <td>treatment of dry scaly skin disorders of the scalp</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Acnedap Gel 15gm</td>
+        <td>Acne</td>
+        <td>Mild to moderate acne (spots)</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Acnedap Plus Gel 15gm</td>
+        <td>Acne</td>
+        <td>A RET 0.025% is a prescription medicine that is used to reduce fine wrinkles</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Paracetamol 125mg Syrup 60mlParacetamol 500mg Tablet 10'S</td>
+        <td>Pain</td>
+        <td>muscles (myalgia) and joints (arthralgia), neuralgia, radiculitis, rheumatic diseases</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>PARACETAMOL(ABBOTT) 650mg Tablet 10's</td>
+        <td>Pain</td>
+        <td>used to relieve abdominal pain, spasmodic dysmenorrhea, symptomatic relief of intestinal, biliary and
+          uretericÂ colics</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Paracip 100mg Tablet 10'SParacip 150mg Injection 30ml</td>
+        <td>Pain</td>
+        <td>Â used to treat Sprain, Backache, Muscular pain, Soft tissue injuries and Musculoskeletal disorders</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Paracod 500/15mg Tablet 10'SParacod 650/30mg Tablet 6'S</td>
+        <td>Pain</td>
+        <td>Â fever, operative pain, dental pain, musculoskeletal and joint disorders</td>
+      </tr>
+    </tbody>
+    <tr>
+        <td>18</td>
+        <td>CEPIAM TR 8mg Capsule 10's</td>
+        <td>Allergies</td>
+        <td>Â improve the appearance of fine lines</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Ceriz Syrup 60ml</td>
+        <td>Allergies</td>
+        <td>relief from allergy</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>Ceriz L Mont 10/5mg Tablet 10'S</td>
+        <td>Allergies</td>
+        <td>releief from all type of allergies</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>Cerzin L Syrup 30mlCerzin L 5mg Tablet 10'S</td>
+        <td>Allergies</td>
+        <td>relief from allergy</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>Cetcip 10mg Tablet 10'SCetcip Syrup 30ml</td>
+        <td>Allergies</td>
+        <td>soothens allergies and good for all types of skin</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>Cetcip Cold Tablet 10'S</td>
+        <td>Allergies</td>
+        <td>skin care for allergy</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td>Cetcip L 5mg Tablet 10'S</td>
+        <td>Allergies</td>
+        <td>Good for Allergic skin</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>Cetemed Tablet 10'S</td>
+        <td>Allergies</td>
+        <td>Itching can be soothen</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td>Ceteze Syrup 30ml</td>
+        <td>Allergies</td>
+        <td>relief from itching</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td>Cetfast 10mg Tablet 10'SCetfast Syrup 30ml</td>
+        <td>Allergies</td>
+        <td>soothens allergies and good for all types of skin</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td>Cetfast M Oral Suspension 60ml</td>
+        <td>Allergies</td>
+        <td>skin care for allergy</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td>Cetgel Capsule 10'S</td>
+        <td>Allergies</td>
+        <td>Â improve the appearance of fine lines</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>Ceticad 5mg Suspension 30mlCeticad 10mg Tablet 10'SCeticad 1mg Syrup</td>
+        <td>Allergies</td>
+        <td>description</td>
+      </tr>
+  </table>
+  <script>
+    document.getElementById('search-button').addEventListener('click', function () {
+        var searchTerm = document.getElementById('medicine-input').value.trim().toLowerCase();
+        var table = document.getElementById('medicine-table');
+        var allRows = table.getElementsByTagName('tr');
+        for (var i = 0; i < allRows.length; i++) {
+          var cells = allRows[i].getElementsByTagName('td');
+          var found = false;
+          for (var j = 1; j < cells.length; j++) { // Start from 1 to skip Index column
+            if (cells[j].textContent.trim().toLowerCase().includes(searchTerm)) {
+              found = true;
+              break;
+            }
+          }
+          if (found) {
+            allRows[i].style.display = '';
+          } else {
+            allRows[i].style.display = 'none';
+          }
+        }
+    });
+      
+  </script>
+</body>
+
+
+</html>

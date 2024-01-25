@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <title>Doctor</title>
+    <style>
+        body {
+            background-color: rgb(118, 200, 255);
+            font-family: Arial, sans-serif;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            border-radius: 30px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;
+        }
+
+        .btn:hover {
+            border-radius: 30px;
+            background-color: white; 
+            color: black; 
+            border: 2px solid #4CAF50;
+        }
+
+        #fileUpload {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border-top: 1px solid #f8f8f8;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+
+        #dvCSV {
+            margin-top: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        function Upload() {
+            var fileUpload = document.getElementById("fileUpload");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+            if (regex.test(fileUpload.value.toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var table = document.createElement("table");
+                        var rows = e.target.result.split("\n");
+                        for (var i = 0; i < rows.length; i++) {
+                            var cells = rows[i].split(",");
+                            if (cells.length > 1) {
+                                var row = table.insertRow(-1);
+                                for (var j = 0; j < cells.length; j++) {
+                                    var cell = row.insertCell(-1);
+                                    cell.innerHTML = cells[j];
+                                }
+                            }
+                        }
+                        var dvCSV = document.getElementById("dvCSV");
+                        dvCSV.innerHTML = "";
+                        dvCSV.appendChild(table);
+                    }
+                    reader.readAsText(fileUpload.files[0]);
+                } else {
+                    alert("This browser does not support HTML5.");
+                }
+            } else {
+                alert("Please upload a valid CSV file.");
+            }
+        }
+    </script>
+  </head>
+  
+  <body>
+    <div class="center-content">
+        <h1>Doctors Details</h1>
+        <input type="file" id="fileUpload" />
+        <input type="button" id="upload" value="Upload" class="btn" onclick="Upload()"/>
+    </div>
+    <hr/>
+    <div id="dvCSV">
+    </div>
+  </body>
+</html>

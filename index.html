@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lanb="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+        h2 {
+            text-align: center;
+        }
+        .navbar {
+          background-color: #5eb7ff;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          overflow: hidden;
+        }
+        
+        .navbar a {
+            align-items: center;
+            
+            margin: 0 10px;
+            text-decoration: none;
+            border-radius: 25px;
+            
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a:hover {
+            background-color: #008cff;
+            color: black;
+            box-shadow: #333;
+        }
+
+
+        .login {
+    
+          color:aliceblue;
+          
+          width: 100px;
+          height: 20px;
+          background-color: rgb(18, 148, 218);
+          position: fixed;
+          right: 1%;
+          top: 4%; /* Adjust the vertical position as needed */
+          transform: translateY(-50%); /* Center the object vertically */
+          line-height: normal;
+          border-radius: 40px;
+        
+        }
+
+
+
+
+
+
+        /* Add this CSS for slide animation */
+        .container.slide-animation {
+            animation: slide 0.5s forwards;
+        }
+        @keyframes slide {
+            from {
+            transform: translateX(-100%);
+            }
+            to {
+            transform: translateX(0);
+            }
+        }
+        .close-btn {
+            float: right;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-icon {
+            right: 20rem;
+            width: 30px;
+            height: 30px;
+            background: url('path-to-your-close-icon-image') no-repeat center center;
+            background-size: contain;
+        }
+        .btnclose {
+            margin-left: auto;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        
+        .btnclose .close-icon img {
+            width: 30px;
+            height: auto;
+        }
+
+        .btnreg {
+            width: 100px;
+            height: 35px;
+            
+            position: fixed;
+            right: 1%;
+            
+            transform: translateY(1850%); 
+            line-height: normal;
+            border-radius: 40px;
+        }
+        .intro {
+            background-color: white;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image {
+            flex: 0 0 100%; /* Adjust the width of the image container as needed */
+            text-align: center;
+        }
+        
+        .image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .content {
+            flex: 0 0 100%; /* Adjust the width of the content container as needed */
+            text-align: center;
+        }
+        
+        .intro h1 {
+            color: #333;
+        }
+        
+        .intro p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        .services {
+            width: 90%; /* Or 1100px */
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #dcf3ff; 
+            border-radius: 5px;
+            
+        }
+        
+        
+        .services h1 {
+            text-align: center;
+            color: #333;
+        }
+        .services li {
+            margin-bottom: 10px;
+        }
+        .services ul {
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+            grid-gap: 40px;
+          }
+        .services .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }      
+        .services .image-container img {
+            width: 100px;
+            height: 98px;
+            object-fit: cover;
+        }
+
+
+
+        .about-inner {
+          max-width: 1440px; /* Set the maximum width to fit MacBook Air screen */
+          margin: 0 auto;
+          padding: 20px;
+        }
+        
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        
+        .about-left {
+          text-align: center;
+        }
+        
+        .about-right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .img img {
+          max-width: 100%;
+          height: auto;
+        }
+        
+
+
+
+
+        .quote {
+            background-color: white;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin: 50px;
+            max-width: 90%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            padding: 50px;
+            border-radius: 5px;
+            max-width: 100%;
+            height: 500px;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quote p {
+            font-size: 50px;
+        }
+        
+        .quote small {
+            font-size:40px;
+        }
+
+
+        .slideshow-container {
+          background-color: #5eb7ff;
+          max-width: 1400px;
+          position: static;
+          border-radius: 20px;
+          margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+          display: none;
+          padding: 80px;
+          text-align: center;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position:-webkit-sticky;
+          top: 50%;
+          border-radius: 40px;
+          width: auto;
+          border-end-end-radius: 50px;
+          margin-top: 22px;
+          padding: 16px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+          background-color: rgba(0,0,0,0.5); /* Update this line to change the background color */
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+
+        .slideshow-container img {
+          border-radius: 30px;
+          width: 350px;
+          height: 380px;
+        }
+      
+      
+      
+      
+      
+
+
+
+        .contact-left {
+          padding-top: 10px;
+          align-items: center;
+          position: static;
+          max-width: 1400px;
+        }
+      
+        /* Style for the iframe */
+        iframe {
+          max-width: 1400px;
+          align-items: center;
+          height: 450px;
+            border-radius: 25px;
+        }  
+        
+
+
+
+
+
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid black;
+            border-radius: 4px;
+            display: none;
+            /* Hide the form initially */
+          }
+        .container.slide-animation {
+            animation: slide 0.5s forwards;
+        }
+        input[type=text], input[type=date], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #3b3b3b;
+        }
+
+        .content {
+            margin-bottom: 60px; /* Space below content */
+        }
+
+
+
+
+        .grid-container {
+          display: grid;
+          border-radius: 20px;
+          padding-inline: 25px;
+          padding-block: 25px;
+          background-color:#5eb7ff;
+          grid-template-columns: auto auto; /* this makes two columns */
+          grid-gap: 20px; /* space between grid items */
+        }
+
+        .facility {
+          
+          padding: 25px;
+          border-radius: 25px;
+          background-color:#ffffff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .facility img {
+          width: 100%;
+          height: auto;
+        }
+        .facility p {
+          font-size: larger;
+        }
+
+
+
+
+
+          .footer {
+            position: fixed;
+            bottom: -1100px; /* Initially hide the footer */
+            left: 0;
+            width: 100%;
+            background-color: #3586ff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            transition: bottom 0.8s ease-in-out; /* Add smooth transition */
+          }
+          
+          .footer.show {
+            bottom: 0; /* Show the footer when scrolled to the bottom */
+          }
+            
+            .social-icon,
+            .menu {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 10px 0;
+              flex-wrap: wrap;
+            }
+            
+            .social-icon__item,
+            .menu__item {
+              list-style: none;
+            }
+            
+            .social-icon__link {
+              font-size: 2rem;
+              color: #fff;
+              margin: 0 10px;
+              display: inline-block;
+              transition: 0.5s;
+            }
+            .social-icon__link:hover {
+              transform: translateY(-20px);
+            }
+            
+            .menu__link {
+              font-size: 1.2rem;
+              color: #fff;
+              margin: 0 10px;
+              display: inline-block;
+              transition: 0.5s;
+              text-decoration: none;
+              opacity: 0.75;
+              font-weight: 300;
+            }
+            
+            .menu__link:hover {
+              opacity: 1;
+            }
+            
+            .footer p {
+              color: #fff;
+              margin: 15px 0 10px 0;
+              font-size: 1rem;
+              font-weight: 300;
+            }
+            
+            .wave {
+              position: absolute;
+              top: -100px;
+              left: 0;
+              width: 100%;
+              height: 100px;
+              background: url("https://i.ibb.co/wQZVxxk/wave.png");
+              background-size: 1000px 100px;
+            }
+            
+            .wave#wave1 {
+              z-index: 1000;
+              opacity: 1;
+              bottom: 0;
+              animation: animateWaves 4s linear infinite;
+            }
+            
+            .wave#wave2 {
+              z-index: 999;
+              opacity: 0.5;
+              bottom: 10px;
+              animation: animate 4s linear infinite !important;
+            }
+            
+            .wave#wave3 {
+              z-index: 1000;
+              opacity: 0.2;
+              bottom: 15px;
+              animation: animateWaves 3s linear infinite;
+            }
+            
+            .wave#wave4 {
+              z-index: 999;
+              opacity: 0.7;
+              bottom: 20px;
+              animation: animate 3s linear infinite;
+            }
+            
+            @keyframes animateWaves {
+              0% {
+                background-position-x: 900px;
+              }
+              100% {
+                background-positon-x: 0px;
+              }
+            }
+            
+            @keyframes animate {
+              0% {
+                background-position-x: -1000px;
+              }
+              100% {
+                background-positon-x: 0px;
+              }
+            }
+    </style>
+</head>
+
+<body>
+<br><br><br>
+<h2>E-Health Centre</h2>
+<div class="navbar">
+  <div style="border-radius: 25px;">
+    <img src="ECELLlogo.png"
+    style="width:60px;height:60px;border: radius 15px;">
+  </div>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="doctor.html">Doctors</a>
+    <a href="#Our Services">Services</a>
+    <a href="Disease.html">Disease</a>
+    <a href="FindYourMed.html">FindMeds</a>
+    <a href="#">
+      <button class="btnclose">
+        <div class="close-icon">
+            <img src="ham-menu-icon.png">
+        </div>
+      </button>
+    </a>
+    <a href="#"><li><a href="AdminLogin.html" class="login">Login</a></li></a>
+</div>
+<div class="intro">
+    <div class="image">
+        <img src="docgrp.png">
+    </div>
+    <div class="content"><br>
+        <h1>Welcome to E-cell clinic</h1>
+        <p style="font-size: larger;">Welcome to the heart of healing and compassion—a place where care knows no bounds and every heartbeat echoes with a commitment to well-being. Step into the realm of our hospital, where expertise meets empathy, and cutting-edge technology converges with a human touch. In these corridors, stories of resilience unfold, and every diagnosis is met with a personalized path to recovery. Our dedicated team of healthcare professionals stands as guardians of health, weaving a tapestry of hope for those in need. Join us on a journey where every moment matters, and the pursuit of wellness is at the core of our mission. Welcome to a sanctuary of health and healing—welcome to our hospital.
+        </p>
+    </div>
+</div>
+
+
+
+<div class="services">
+    <h1>Our Services</h1><br><br>
+    <div class="image-container">
+        <br><img src="lung.png" alt="Service 1">
+        <img src="scope.png" alt="Service 2">
+        <img src="heart.png" alt="Service 3">
+        <img src="doct.png" alt="Service 4"><br>
+    </div>
+    <div class="services">
+        <ul style="font-size: xx-large;">
+            <li>Emergency Care</li>
+            <li>Surgical Procedures</li>
+            <li>Outpatient Clinics</li>
+            <li>Diagnostic Imaging</li>
+            <li>Laboratory Services</li>
+            <li>Pharmacy</li>
+            <li>Physical Therapy</li>
+            <li>Mental Health Services</li>
+            <li>Maternity Care</li>
+        </ul>
+    </div>
+</div><br><br><br>
+
+
+
+<br><br><Br>
+
+
+<div class="grid-container">
+  <div class="facility">
+      <h2>best-in-class medical facility </h2>
+      <img src="Lab1.jpeg" alt="Facility 1">
+      <p>A hospital's primary task is to provide short-term care for people with severe health issues resulting from injury, disease, or genetic anomaly. Patients may receive inpatient or outpatient care from a hospital.</p>
+  </div>
+
+  <div class="facility">
+      <h2>Technology in Healthcare Facilities</h2>
+      <img src="Lab2.jpeg" alt="Facility 2">
+      <p>Incorporating cable management for surgical robotics improves infection control while minimizing the disinfection process</p>
+  </div>
+
+  <div class="facility">
+      <h2>High class infrastructure and Security</h2>
+      <img src="Lab3.jpeg" alt="Facility 3">
+      <Center><p>Hospital security systems should identify and resolve risks to people, possessions, equipment, and data files. Many hospitals have security staff and arrangements to protect patients and staff.</p></Center>
+  </div>
+
+  <div class="facility">
+      <h2>Special Facility Care Cell</h2>
+      <img src="Lab4.jpeg" alt="Facility 4">
+      <p>Hospital beds are designed to provide a safe and comfortable resting place for patients who may be ill, injured, or recovering from a medical procedure. 
+        Hospital beds are regularly maintained and staffed and immediately available for the care of admitted patients.</p>
+  </div>
+</div>
+<br>
+
+<div class="quote">
+    <p>When you are young and healthy, it never occurs to you that in a single second your whole life could change.</p>
+    <small>- Anonim Nano</small>
+</div>
+
+<div class="slideshow-container">
+  
+  <!-- Slides -->
+  <!-- Add as many slides as you need -->
+
+  <div class="mySlides">
+    <h1>Dr. Samuel - General Practitioner (GP)</h1>
+    <img src="doct1.png" alt="Doctor 1">
+    <p>Dr. Samuel is a highly experienced general practitioner...</p>
+  </div>
+
+  <!-- Add more slides as needed -->
+
+  <div class="mySlides">
+    <h1>Dr. Mikey - Surgeon</h1>
+    <img src="doctor3.png" alt="Doctor 2">
+    <p>Dr. Mikey is a skilled and specialized surgeon...</p>
+  </div>
+
+  <!-- Add more slides as needed -->
+
+  <div class="mySlides">
+    <h1>Dr. Mandella - Psychiatrist</h1>
+    <img src="doc3.png" alt="Doctor 3">
+    <p>Dr. Mandella is a compassionate and knowledgeable psychiatrist...</p>
+  </div>
+
+  <!-- Add more slides as needed -->
+
+  <div class="mySlides">
+    <h1>Dr. Rishikesh - Pediatrician</h1>
+    <img src="doc4.png" alt="Doctor 4">
+    <p>Dr. Rishikesh is a dedicated pediatrician...</p>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+
+<div class="container" id="register-form">
+    <span class="close-btn" onclick="closeRegisterForm()">&times;</span>
+    <form action="/submit_form">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="disease">Disease</label>
+        <select id="disease" name="disease">
+            <option value="none">None</option>
+            <option value="flu">Flu</option>
+            <option value="covid-19">COVID-19</option>
+            <option value="cancer">Cancer</option>
+        </select>
+
+        <input type="submit" value="Register">
+    </form>
+</div>
+ 
+
+<div class="contact-left">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1945.0135023123182!2d80.14957290665461!3d12.841531464345604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525939beee564f%3A0x5f8a74c0fc66dd4d!2sApollo%20Pharmacy%20Melakottaiyur!5e0!3m2!1sen!2sin!4v1699173718416!5m2!1sen!2sin" width="1440" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/envizionvitc/">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/ecell_vit?lang=en">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/sharing/share-offsite/?url=https://linktr.ee/ECELL_VITC?utm_source=linktree_profile_share&ltsid=a3ccd223-1e48-4ebc-b421-ac659ee5b9a2">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/ecell_vitcc/">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+
+    <p>&copy;2023 E-cell Recuitment | All Rights Reserved</p>
+</footer>
+
+<br><br>
+<div id="contact" class="contact py">
+    <div class="container grid">
+        <div class="contact-left">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1945.0135023123182!2d80.14957290665461!3d12.841531464345604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525939beee564f%3A0x5f8a74c0fc66dd4d!2sApollo%20Pharmacy%20Melakottaiyur!5e0!3m2!1sen!2sin!4v1699173718416!5m2!1sen!2sin" width="60" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+<script>
+    
+    function toggleRegisterForm() {
+      var registerForm = document.getElementById("register-form");
+      if (registerForm.style.display === "none") {
+        registerForm.style.display = "block"; // Make the form visible
+        registerForm.classList.add("slide-animation"); // Apply slide animation
+      } else {
+        registerForm.style.display = "none"; // Hide the form
+        registerForm.classList.remove("slide-animation"); // Remove slide animation
+      }
+    }
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    window.addEventListener('scroll', function() {
+        var footer = document.querySelector('.footer');
+        var scrollHeight = document.documentElement.scrollHeight;
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var clientHeight = document.documentElement.clientHeight;
+      
+        if (scrollTop + clientHeight >= scrollHeight) {
+          footer.classList.add('show');
+        } else {
+          footer.classList.remove('show');
+        }
+      });
+      
+  </script>
+  <script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+}
+
+  </script>
+
+</body>
+</html>
